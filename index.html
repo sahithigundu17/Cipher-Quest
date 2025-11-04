@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Breaker Game 🔐</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Cipher Quest</h1>
+
+    <div id="game-info">
+      <p>Level: <span id="level">1</span> / 5</p>
+      <p>Score: <span id="score">0</span></p>
+      <p>Time Left: <span id="timer">180</span> sec</p>
+    </div>
+
+    <div id="message-box">
+      <p id="cipherText">Click 'Start Game' to begin!</p>
+    </div>
+
+    <input type="text" id="userInput" placeholder="Enter your decrypted text here..." disabled>
+
+    <div class="buttons">
+      <button id="startBtn">Start Game</button>
+      <button id="submitBtn" disabled>Submit</button>
+    </div>
+
+    <p id="feedback"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
