@@ -47,6 +47,7 @@ const timerDisplay = document.getElementById("timer");
 const userInput = document.getElementById("userInput");
 const startBtn = document.getElementById("startBtn");
 const submitBtn = document.getElementById("submitBtn");
+const skipBtn = document.getElementById("skipBtn");
 
 // Hint + Algorithm labels
 const algoElement = document.createElement("p");
@@ -125,6 +126,7 @@ function startGame() {
 
   submitBtn.disabled = false;
   userInput.disabled = false;
+  skipBtn.disabled = false;
   feedback.textContent = "";
 }
 
@@ -252,6 +254,28 @@ function checkAnswer() {
   updateUI();
 }
 
+function skipQuestion() {
+  feedback.textContent = "⏭️ Question Skipped!";
+  feedback.style.color = "#ff9800";
+
+  // Small penalty for skipping (optional)
+  score = Math.max(0, score - 3);
+
+  // Confetti-like fade animation (optional)
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.classList.add("flash-skip");
+  setTimeout(() => {
+    gameContainer.classList.remove("flash-skip");
+  }, 500);
+
+  updateUI();
+
+  // Move to next question after short delay
+  setTimeout(() => {
+    nextQuestion();
+  }, 1000);
+}
+
 function updateUI() {
   levelDisplay.textContent = level;
   scoreDisplay.textContent = score;
@@ -273,6 +297,7 @@ function endGame(timeUp = false) {
 
   submitBtn.disabled = true;
   userInput.disabled = true;
+  skipBtn.disabled = true;
 
   // Show Start button again
   startBtn.style.display = "inline-block";
@@ -283,3 +308,4 @@ function endGame(timeUp = false) {
 
 startBtn.addEventListener("click", startGame);
 submitBtn.addEventListener("click", checkAnswer);
+skipBtn.addEventListener("click", skipQuestion);
