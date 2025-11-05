@@ -278,7 +278,7 @@ button {
 }
 
 #skipBtn {
-  background: #e84ba7;
+  background-color: #e84ba7;
   color: rgb(19, 18, 18);
   padding: 8px 15px;
   border: none;
@@ -288,7 +288,7 @@ button {
 }
 
 #skipBtn:hover {
-  background: black;
+  background-color: #121413;
   color: #e84ba7;
   transform: scale(1.05);
   box-shadow: 0 0 10px #e84ba7;
@@ -303,4 +303,5 @@ button {
   0% { background-color: #ffeb3b22; }
   100% { background-color: transparent; }
 }
+
 
