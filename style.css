@@ -276,3 +276,31 @@ button {
   background-color: rgba(255, 0, 0, 0.2);
   transition: background-color 0.5s ease;
 }
+
+#skipBtn {
+  background: #e84ba7;
+  color: rgb(19, 18, 18);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#skipBtn:hover {
+  background: black;
+  color: #e84ba7;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #e84ba7;
+}
+
+/* Optional quick flash animation when skipping */
+.flash-skip {
+  animation: skipFlash 0.4s ease;
+}
+
+@keyframes skipFlash {
+  0% { background-color: #ffeb3b22; }
+  100% { background-color: transparent; }
+}
+
